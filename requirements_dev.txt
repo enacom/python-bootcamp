@@ -1,0 +1,4 @@
+-r requirements.txt
+mkdocs~=1.2
+mkdocs-material~=8.2
+fastapi-code-generator~=0.3
