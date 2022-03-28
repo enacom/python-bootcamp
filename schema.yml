@@ -1,0 +1,158 @@
+openapi: 3.0.0
+info:
+  title: ENACOM Python bootcamp API
+  version: 0.1.0
+  description: >
+    API (Interface de programação de aplicações) para resolução de problemas de
+    otimização.
+
+servers:
+  - url: 0.0.0.0
+
+components:
+  parameters:
+    code:
+      in: path
+      name: code
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+  schemas:
+    train_model:
+      type: object
+      required:
+        - wagons
+      properties:
+        wagons:
+          type: integer
+    train_model_usage:
+      type: object
+      required:
+        - wagons
+        - usage
+      properties:
+        wagons:
+          type: integer
+        usage:
+          type: integer
+    fleet:
+      type: object
+      required:
+        - wagons
+      properties:
+        wagons:
+          type: integer
+    railroad:
+        type: object
+        required:
+          - train_models
+          - fleets
+        properties:
+          train_models:
+            type: array
+            items:
+              $ref: '#/components/schemas/train_model'
+          fleets:
+            type: array
+            items:
+              $ref: '#/components/schemas/fleet'
+    optimization_input:
+      type: object
+      required:
+        - code
+        - railroad
+      properties:
+        code:
+          type: integer
+        railroad:
+          $ref: '#/components/schemas/railroad'
+    optimization_output:
+      type: object
+      required:
+        - code
+        - results
+      properties:
+        code:
+          type: integer
+        results:
+          type: object
+          required:
+            - train_models_usage
+          properties:
+            train_models_usage:
+              type: array
+              items:
+                $ref: '#/components/schemas/train_model_usage'
+    NotFoundError:
+      type: object
+      properties:
+        message:
+          type: string
+
+paths:
+  /solve:
+    post:
+      summary: Resolver problema de otimização
+      description: Faz a chamada da função de resolução do problema de otimização.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/optimization_input'
+            examples:
+                input:
+                  value: |-
+                    {
+                        "code": 7654321,
+                        "railroad": {
+                            "train_models": [
+                                {
+                                    "wagons": 50
+                                },
+                                {
+                                    "wagons": 75
+                                }
+                            ],
+                            "fleets": [
+                                {
+                                    "wagons": 1500
+                                }
+                            ]
+
+                        }
+                    }
+      responses:
+        200:
+          description: Problema recebido.
+          content:
+            application/json:
+              schema:
+                type:
+                  string
+        404:
+          description: Problema não pode ser recebido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  /results/{code}:
+    parameters:
+      - $ref: '#/components/parameters/code'
+    post:
+      tags: ['com código da otimização']
+      description: Pede os resultados da otimização a partir do código do problema.
+      responses:
+        200:
+          description: Resultado retornado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/optimization_output'
+        404:
+          description: Resultado não encontrado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
