@@ -1,0 +1,43 @@
+# Informações gerais
+site_name: ENACOM Python bootcamp
+
+# Repositório
+repo_url: https://github.com/enacom/python-bootcamp
+repo_name: python-bootcamp
+
+
+# Configurações
+theme:
+  name: material
+  language: pt-BR
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  palette:
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Escuro (dark mode)
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Claro (light mode)
+
+  favicon: assets/images/favicon.png
+
+  logo: assets/images/logo.svg
+
+  icon:
+    repo: fontawesome/brands/github
+
+# Rodapé
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/enacomgroup/
+      name: LinkedIn da ENACOM
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UC6U9jZX7bSPSbsUpXSAAiRg
+      name: Youtube da ENACOM
