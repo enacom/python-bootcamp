@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ENACOM Python bootcamp"
+version = "0.1.0"
+description = "Processo completo de construção e utilização de uma API para resolver um problema de otimização"
+authors = ["André Rocha <andre.rocha@enacom.com.br>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.75.0"
+pydantic = "^1.9.0"
+uvicorn = {extras = ["standard"], version = "^0.17.6"}
+
+[tool.poetry.dev-dependencies]
+mkdocs = "^1.2"
+mkdocs-material = "^8.2"
+fastapi-code-generator = "^0.3.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
