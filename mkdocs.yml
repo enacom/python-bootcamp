@@ -41,3 +41,10 @@ extra:
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/channel/UC6U9jZX7bSPSbsUpXSAAiRg
       name: Youtube da ENACOM
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
