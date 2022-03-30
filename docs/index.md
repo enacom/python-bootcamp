@@ -1,6 +1,6 @@
 # ENACOM Python bootcamp
 
-Processo completo de construção e utilização de uma API para resolver um problema de otimização.
+Processo completo de construção e utilização de uma API (Interface de programação de aplicações) para resolver um problema de otimização.
 
 ![ENACOM Python bootcamp](assets/images/enacom_python_bootcamp.svg)
 
@@ -45,7 +45,7 @@ Achar o valor da variável de entrada **x** que gera o menor valor de saída **f
 
 > **Objetivo:** maximizar a quantidade de vagões em trem.
 
-> **Restrições:** Disponibilidade de vagões e locomotivas.
+> **Restrições:** disponibilidade de vagões e locomotivas.
 
 ### Modelo matemático do problema
 ![Modelo matemático do problema](assets/images/logistic_equation.svg)
