@@ -4,6 +4,10 @@ Processo completo de construção e utilização de uma API (Interface de progra
 
 ![ENACOM Python bootcamp](assets/images/enacom_python_bootcamp.svg)
 
+
+## Desafio ENACOM Python bootcamp
+Para detalhes sobre o desafio acesse: [Desafio ENACOM Python bootcamp](challenge.md)
+
 ## 1. Definição da API com OpenAPI
 ![OpenAPI](assets/images/libraries/api_openapi.svg)
 
@@ -26,6 +30,9 @@ Para visualizar a especificação como documentação dinâmica vamos usar o [ed
 
 ![Postman](assets/images/libraries/postman.svg)
 
+Com o Postman aberto, importe a coleção de cenários, disponível na raiz do repositório: [enacom_python_bootcamp.postman_collection.json](https://github.com/enacom/python-bootcamp/blob/main/enacom_python_bootcamp.postman_collection.json)
+
+Ao abrir um cenário confira se está sendo feita uma requisição do tipo POST para o endereço http://0.0.0.0:9000/solve
 
 ## 5. Uso de métodos de otimização para resolução do problema
 Usaremos a biblioteca desenvolvida pela ENACOM disponível no PyPI (The Python Package Index): [science-optimization](https://pypi.org/project/science-optimization/).
@@ -37,8 +44,6 @@ Ela resolve problemas que apresentam a seguinte forma:
 ![Equation de otimização genérica](assets/images/optimization_equation.svg)
 
 Achar o valor da variável de entrada **x** que gera o menor valor de saída **f(x)**, porém respeitando os limites **g(x) <= 0**, **h(x) <= 0**, para **x** dentro de um faixa de valores entre **x_min** e **x_max** inclusos.
-
-
 
 ## 6. Modelagem de um problema de otimização
 ### Problema: encontrar a alocação ótima dos modelos de trens
