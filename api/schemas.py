@@ -1,6 +1,7 @@
 from typing import Optional
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from api.models.railroad import Railroad
+from api.models.optimization_results import OptimizationResults
 
 
 class HealthCheckResponse(BaseModel):
@@ -54,6 +55,7 @@ class OptimizationInput(BaseModel):
 class OptimizationOutput(BaseModel):
     code: int
     message: str
+    results: OptimizationResults = None
 
 
 class NotFoundError(BaseModel):

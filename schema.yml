@@ -32,11 +32,11 @@ components:
     train_model_usage:
       type: object
       required:
-        - wagons
+        - train_model
         - usage
       properties:
-        wagons:
-          type: integer
+        train_model:
+          $ref: '#/components/schemas/train_model'
         usage:
           type: integer
     wagons_by_fleet:
@@ -101,19 +101,31 @@ components:
       type: object
       required:
         - code
-        - results
+        - message
       properties:
         code:
           type: integer
+        message:
+          type: string
         results:
           type: object
           required:
             - train_models_usage
+            - wagons
+            - locomotives
           properties:
             train_models_usage:
               type: array
               items:
                 $ref: '#/components/schemas/train_model_usage'
+            wagons:
+              type: array
+              items:
+                $ref: '#/components/schemas/wagons_by_fleet'
+            locomotives:
+              type: array
+              items:
+                $ref: '#/components/schemas/locomotives_by_series'
     NotFoundError:
       type: object
       properties:
