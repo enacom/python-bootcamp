@@ -120,24 +120,34 @@ def optimize_allocation(
 
     results = optimizer.optimize()
 
-    # print results
     models = problem.constraints.A()
     limits = problem.constraints.b()
     allocation = results.x
     allocated_wagons = -1 * results.fx
     allocated_locomotives = models[1, :] @ allocation
 
+    # print results
     for i in range(models.shape[1]):
-        print(f"number of trains using {models[0, i]} wagons and {models[1, i]} locomotives: {allocation[i][0]}")
+        print(
+            f"number of trains using {models[0, i]} wagons"
+            f" and {models[1, i]} locomotives: {allocation[i][0]}"
+        )
 
-    print(f"number of used wagons: {allocated_wagons[0]} of {limits[0][0]}")
-    print(f"number of used locomotives: {allocated_locomotives[0]} of {limits[1][0]}")
+    print(
+        f"number of used wagons: {allocated_wagons[0]}"
+        f" of {limits[0][0]}"
+    )
+
+    print(
+        f"number of used locomotives: {allocated_locomotives[0]}"
+        f" of {limits[1][0]}"
+    )
 
     return models, allocation
 
 
 def solve(
-    optimization_input: dict
+    optimization_input: OptimizationInput
 ):
     """
     Build and optimize allocation problem.
@@ -146,10 +156,10 @@ def solve(
         optimization_input (OptimizationInput): Allocation problem input data.
     """
     # parameters
-    wagons = np.array([43, 56])
-    locomotives = np.array([3, 4])
-    total_wagons = 615
-    total_locomotives = 22
+    wagons = optimization_input.railroad.train_models_wagons()
+    locomotives = optimization_input.railroad.train_models_locomotives()
+    total_wagons = optimization_input.railroad.total_wagons()
+    total_locomotives = optimization_input.railroad.total_locomotives()
 
     # build optimization problem
     problem = build_allocation_problem(

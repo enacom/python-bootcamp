@@ -10,4 +10,3 @@ class TrainModel:
     series: str
     locomotives: int
     wagons: int
-
