@@ -170,3 +170,9 @@ def solve(
     )
 
     models, allocation = optimize_allocation(problem=problem)
+
+    # TODO: Salvar os resultados:
+    # models e allocation na estrutura do OptimizationOutput.
+    # Esse dados de saída tem que ficar disponível para a
+    # rota: '/results/{code}'
+    # Faça as modificações que forem necessárias.
