@@ -1,18 +1,18 @@
 FROM python:3.9-slim
 
 # Install system dependencies
-# RUN apt-get update --yes && \
-#     apt-get install --yes build-essential
+RUN apt-get update --yes && \
+    apt-get install --yes build-essential
 
 # Configure files and directories
-WORKDIR /api
+WORKDIR /bootcamp
 
-COPY ./requirements.txt /api/requirements.txt
+COPY ./requirements.txt /bootcamp/requirements.txt
 
 # Install Python requirements
-RUN pip install --no-cache-dir --upgrade --requirement /api/requirements.txt
+RUN pip install --no-cache-dir --upgrade --requirement /bootcamp/requirements.txt
 
-COPY ./api /api
+COPY . /bootcamp
 
 EXPOSE 9000
 
