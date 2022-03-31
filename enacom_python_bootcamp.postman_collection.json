@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "4c8938b8-b92f-46b2-bced-0e18be68b800",
+		"name": "ENACOM Python bootcamp",
+		"description": "Dados iniciais para utilização de API para resolver um problema de otimização.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "março",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"init_date\": 1646092800,\n    \"end_date\": 1648684800,\n    \"code\": \"144464\",\n    \"railroad\": {\n        \"train_models\": [\n            {\n                \"series\": \"LC80\",\n                \"locomotives\": 3,\n                \"wagons\": 43\n            },\n            {\n                \"series\": \"LC80\",\n                \"locomotives\": 4,\n                \"wagons\": 56\n            }\n        ],\n        \"wagons\": [\n            {\n                \"fleet\": \"15800\",\n                \"fleet_name\": \"Frota ENACOM\",\n                \"total\": 615\n            }\n        ],\n        \"locomotives\": [\n            {\n                \"series\": \"LC80\",\n                \"total\": 22\n            }\n        ]        \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:9000/solve",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "9000",
+					"path": [
+						"solve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "abril",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"init_date\": 1648771200,\n    \"end_date\": 1651276800,\n    \"code\": \"255575\",\n    \"railroad\": {\n        \"train_models\": [\n            {\n                \"series\": \"LC80\",\n                \"locomotives\": 3,\n                \"wagons\": 43\n            },\n            {\n                \"series\": \"LC80\",\n                \"locomotives\": 4,\n                \"wagons\": 56\n            }\n        ],\n        \"wagons\": [\n            {\n                \"fleet\": \"15800\",\n                \"fleet_name\": \"Frota ENACOM\",\n                \"total\": 1230\n            }\n        ],\n        \"locomotives\": [\n            {\n                \"series\": \"LC80\",\n                \"total\": 44\n            }\n        ]        \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:9000/solve",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "9000",
+					"path": [
+						"solve"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
