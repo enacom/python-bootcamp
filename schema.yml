@@ -6,9 +6,6 @@ info:
     API (Interface de programação de aplicações) para resolução de problemas de
     otimização.
 
-servers:
-  - url: 0.0.0.0
-
 components:
   parameters:
     code:
@@ -105,24 +102,37 @@ paths:
                 input:
                   value: |-
                     {
-                        "code": 7654321,
-                        "railroad": {
-                            "train_models": [
-                                {
-                                    "wagons": 50
-                                },
-                                {
-                                    "wagons": 75
-                                }
-                            ],
-                            "fleets": [
-                                {
-                                    "wagons": 1500
-                                }
-                            ]
-
-                        }
-                    }
+                      "init_date": 1646092800,
+                      "end_date": 1648684800,
+                      "code": "144464",
+                      "railroad": {
+                          "train_models": [
+                              {
+                                  "series": "LC80",
+                                  "locomotives": 3,
+                                  "wagons": 43
+                              },
+                              {
+                                  "series": "LC80",
+                                  "locomotives": 4,
+                                  "wagons": 56
+                              }
+                          ],
+                          "wagons": [
+                              {
+                                  "fleet": "15800",
+                                  "fleet_name": "Frota ENACOM",
+                                  "total": 366
+                              }
+                          ],
+                          "locomotives": [
+                              {
+                                  "series": "LC80",
+                                  "total": 35
+                              }
+                          ]
+                      }
+                  }
       responses:
         200:
           description: Problema recebido.
