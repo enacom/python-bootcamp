@@ -10,7 +10,7 @@ from http import HTTPStatus
 from api.schemas import (
     HealthCheckResponse, OptimizationInput, NotFoundError, OptimizationOutput
 )
-from api.optimization.problem import solve
+from api.optimization import problem
 
 
 api = FastAPI(
@@ -21,6 +21,17 @@ api = FastAPI(
         'para resolução de problemas de otimização.\n'
     ),
 )
+
+
+@api.get(
+    '/'
+)
+def root():
+    response = {
+        "message": f"{api.title}. versão: {api.version}\n{api.description}"
+    }
+
+    return response
 
 
 @api.get(
@@ -48,7 +59,15 @@ def healthcheck():
     }
 )
 def post_results_code(code: int) -> Union[OptimizationOutput, NotFoundError]:
-    pass
+    response = OptimizationOutput(
+        code=code,
+        message=(
+            f"Resultado do problema {code} ainda não está sendo salvo."
+            "Isso é parte do desafio!"
+        )
+    )
+
+    return response
 
 
 @api.post(
@@ -67,7 +86,7 @@ def post_solve(
     """
     Resolver problema de otimização
     """
-    solve(
+    problem.solve(
         optimization_input=optimization_input
     )
 
