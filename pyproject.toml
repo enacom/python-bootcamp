@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ENACOM Python bootcamp"
-version = "0.1.0"
+version = "0.1.1"
 description = "Processo completo de construção e utilização de uma API para resolver um problema de otimização"
 authors = ["André Rocha <andre.rocha@enacom.com.br>"]
 
@@ -10,6 +10,7 @@ fastapi = "^0.75.0"
 pydantic = "^1.9.0"
 uvicorn = {extras = ["standard"], version = "^0.17.6"}
 science-optimization = "^0.7.9"
+numpy = "^1.22.3"
 
 [tool.poetry.dev-dependencies]
 mkdocs = "^1.2"
@@ -17,6 +18,8 @@ mkdocs-material = "^8.2"
 fastapi-code-generator = "^0.3.4"
 ipython = "^8.2.0"
 ipdb = "^0.13.9"
+pytest = "^7.1.1"
+httpie = "^3.1.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
