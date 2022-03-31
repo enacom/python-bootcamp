@@ -19,8 +19,14 @@ components:
     train_model:
       type: object
       required:
+        - series
+        - locomotives
         - wagons
       properties:
+        series:
+          type: string
+        locomotives:
+          type: integer
         wagons:
           type: integer
     train_model_usage:
@@ -33,33 +39,60 @@ components:
           type: integer
         usage:
           type: integer
-    fleet:
+    wagons_by_fleet:
       type: object
       required:
-        - wagons
+        - fleet
+        - fleet_name
+        - total
       properties:
-        wagons:
+        fleet:
+          type: string
+        fleet_name:
+          type: string
+        total:
+          type: integer
+    locomotives_by_series:
+      type: object
+      required:
+        - series
+        - total
+      properties:
+        series:
+          type: string
+        total:
           type: integer
     railroad:
         type: object
         required:
           - train_models
-          - fleets
+          - wagons
+          - locomotives
         properties:
           train_models:
             type: array
             items:
               $ref: '#/components/schemas/train_model'
-          fleets:
+          wagons:
             type: array
             items:
-              $ref: '#/components/schemas/fleet'
+              $ref: '#/components/schemas/wagons_by_fleet'
+          locomotives:
+            type: array
+            items:
+              $ref: '#/components/schemas/locomotives_by_series'
     optimization_input:
       type: object
       required:
+        - init_date
+        - end_date
         - code
         - railroad
       properties:
+        init_date:
+          type: integer
+        end_date:
+          type: integer
         code:
           type: integer
         railroad:
@@ -102,37 +135,37 @@ paths:
                 input:
                   value: |-
                     {
-                      "init_date": 1646092800,
-                      "end_date": 1648684800,
-                      "code": "144464",
-                      "railroad": {
-                          "train_models": [
-                              {
-                                  "series": "LC80",
-                                  "locomotives": 3,
-                                  "wagons": 43
-                              },
-                              {
-                                  "series": "LC80",
-                                  "locomotives": 4,
-                                  "wagons": 56
-                              }
-                          ],
-                          "wagons": [
-                              {
-                                  "fleet": "15800",
-                                  "fleet_name": "Frota ENACOM",
-                                  "total": 366
-                              }
-                          ],
-                          "locomotives": [
-                              {
-                                  "series": "LC80",
-                                  "total": 35
-                              }
-                          ]
-                      }
-                  }
+                        "init_date": 1648771200,
+                        "end_date": 1651276800,
+                        "code": 255575,
+                        "railroad": {
+                            "train_models": [
+                                {
+                                    "series": "LC80",
+                                    "locomotives": 3,
+                                    "wagons": 43
+                                },
+                                {
+                                    "series": "LC80",
+                                    "locomotives": 4,
+                                    "wagons": 56
+                                }
+                            ],
+                            "wagons": [
+                                {
+                                    "fleet": "15800",
+                                    "fleet_name": "Frota ENACOM",
+                                    "total": 615
+                                }
+                            ],
+                            "locomotives": [
+                                {
+                                    "series": "LC80",
+                                    "total": 22
+                                }
+                            ]
+                        }
+                    }
       responses:
         200:
           description: Problema recebido.

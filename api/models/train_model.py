@@ -11,7 +11,3 @@ class TrainModel:
     locomotives: int
     wagons: int
 
-
-@dataclass
-class TrainModels:
-    models: list[TrainModel]

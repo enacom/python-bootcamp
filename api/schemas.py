@@ -1,18 +1,10 @@
 from typing import Optional
 from pydantic import BaseModel
-from api.models.train_model import TrainModels
-from api.models.wagons import Wagons
-from api.models.locomotives import Locomotives
+from api.models.railroad import Railroad
 
 
 class HealthCheckResponse(BaseModel):
     status: str = "ok"
-
-
-class Railroad(BaseModel):
-    train_models: TrainModels
-    wagons: Wagons
-    locomotives: Locomotives
 
 
 class OptimizationInput(BaseModel):

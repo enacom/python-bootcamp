@@ -9,8 +9,3 @@ from pydantic.dataclasses import dataclass
 class LocomotivesBySeries:
     series: str
     total: int
-
-
-@dataclass(frozen=True, order=True)
-class Locomotives:
-    locomotives_by_series: list[LocomotivesBySeries]
