@@ -53,7 +53,7 @@ class OptimizationInput(BaseModel):
 
 class OptimizationOutput(BaseModel):
     code: int
-    railroad: Railroad
+    message: str
 
 
 class NotFoundError(BaseModel):
