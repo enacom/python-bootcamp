@@ -34,8 +34,16 @@ docker compose up --build
 ```
 
 #### Ambiente virtual Python
-Para criar e ativar um ambiente virtual consulte a documentação: [Ambientes virtuais e pacotes](https://docs.python.org/3/tutorial/venv.html)
+Para **criar** e **ativar** um ambiente virtual consulte a documentação: [Ambientes virtuais e pacotes](https://docs.python.org/3/tutorial/venv.html)
 
+Após criado ativar o ambiente virtual.
+
+Para instalar o projeto da API em mode de desenvolvimento:
+```sh
+pip install --requirement requirements_dev.txt --editable .
+```
+
+### Execução da API
 ```sh
 uvicorn api.main:api --reload --host 0.0.0.0 --port 9000
 ```
@@ -44,6 +52,6 @@ uvicorn api.main:api --reload --host 0.0.0.0 --port 9000
 > Se a API estiver ativa, a resposta será: `status	"ok"` ou `{"status":"ok"}`
 
 
-### Documentação da API
+#### Documentação da API
 Para acessar a documentação do API abra o seguinte endereço em algum navegador:
 [http://0.0.0.0:9000/docs](http://0.0.0.0:9000/docs)
