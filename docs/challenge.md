@@ -40,7 +40,7 @@ Após criado ativar o ambiente virtual.
 
 Para instalar o projeto da API em mode de desenvolvimento:
 ```sh
-pip install --requirement requirements_dev.txt --editable .
+pip install --requirement requirements_dev.txt
 ```
 
 ### Execução da API
