@@ -324,9 +324,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#execucao-da-api" class="md-nav__link">
+    Execução da API
+  </a>
+  
+    <nav class="md-nav" aria-label="Execução da API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#documentacao-da-api" class="md-nav__link">
     Documentação da API
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -419,9 +432,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#execucao-da-api" class="md-nav__link">
+    Execução da API
+  </a>
+  
+    <nav class="md-nav" aria-label="Execução da API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#documentacao-da-api" class="md-nav__link">
     Documentação da API
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -482,15 +508,20 @@ ou
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker compose up --build
 </code></pre></div></p>
 <h4 id="ambiente-virtual-python">Ambiente virtual Python</h4>
-<p>Para criar e ativar um ambiente virtual consulte a documentação: <a href="https://docs.python.org/3/tutorial/venv.html">Ambientes virtuais e pacotes</a></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>uvicorn api.main:api --reload --host <span class="m">0</span>.0.0.0 --port <span class="m">9000</span>
+<p>Para <strong>criar</strong> e <strong>ativar</strong> um ambiente virtual consulte a documentação: <a href="https://docs.python.org/3/tutorial/venv.html">Ambientes virtuais e pacotes</a></p>
+<p>Após criado ativar o ambiente virtual.</p>
+<p>Para instalar o projeto da API em mode de desenvolvimento:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip install --requirement requirements_dev.txt --editable .
+</code></pre></div></p>
+<h3 id="execucao-da-api">Execução da API</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>uvicorn api.main:api --reload --host <span class="m">0</span>.0.0.0 --port <span class="m">9000</span>
 </code></pre></div>
 <blockquote>
 <p>Para verificar se a API está ativa acesse:
 <a href="http://0.0.0.0:9000/healthcheck">http://0.0.0.0:9000/healthcheck</a>
 Se a API estiver ativa, a resposta será: <code>status  "ok"</code> ou <code>{"status":"ok"}</code></p>
 </blockquote>
-<h3 id="documentacao-da-api">Documentação da API</h3>
+<h4 id="documentacao-da-api">Documentação da API</h4>
 <p>Para acessar a documentação do API abra o seguinte endereço em algum navegador:
 <a href="http://0.0.0.0:9000/docs">http://0.0.0.0:9000/docs</a></p>
 
