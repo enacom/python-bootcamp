@@ -7,13 +7,13 @@
 	},
 	"item": [
 		{
-			"name": "março",
+			"name": "março solve",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"init_date\": 1646092800,\n    \"end_date\": 1648684800,\n    \"code\": \"144464\",\n    \"railroad\": {\n        \"train_models\": [\n            {\n                \"series\": \"LC80\",\n                \"locomotives\": 3,\n                \"wagons\": 43\n            },\n            {\n                \"series\": \"LC80\",\n                \"locomotives\": 4,\n                \"wagons\": 56\n            }\n        ],\n        \"wagons\": [\n            {\n                \"fleet\": \"15800\",\n                \"fleet_name\": \"Frota ENACOM\",\n                \"total\": 615\n            }\n        ],\n        \"locomotives\": [\n            {\n                \"series\": \"LC80\",\n                \"total\": 22\n            }\n        ]        \n    }\n}",
+					"raw": "{\n    \"init_date\": 1646092800,\n    \"end_date\": 1648684800,\n    \"code\": 144464,\n    \"railroad\": {\n        \"train_models\": [\n            {\n                \"series\": \"LC80\",\n                \"locomotives\": 3,\n                \"wagons\": 43\n            },\n            {\n                \"series\": \"LC80\",\n                \"locomotives\": 4,\n                \"wagons\": 56\n            }\n        ],\n        \"wagons\": [\n            {\n                \"fleet\": \"15800\",\n                \"fleet_name\": \"Frota ENACOM\",\n                \"total\": 615\n            }\n        ],\n        \"locomotives\": [\n            {\n                \"series\": \"LC80\",\n                \"total\": 22\n            }\n        ]        \n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -38,13 +38,45 @@
 			"response": []
 		},
 		{
-			"name": "abril",
+			"name": "março results",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"init_date\": 1648771200,\n    \"end_date\": 1651276800,\n    \"code\": \"255575\",\n    \"railroad\": {\n        \"train_models\": [\n            {\n                \"series\": \"LC80\",\n                \"locomotives\": 3,\n                \"wagons\": 43\n            },\n            {\n                \"series\": \"LC80\",\n                \"locomotives\": 4,\n                \"wagons\": 56\n            }\n        ],\n        \"wagons\": [\n            {\n                \"fleet\": \"15800\",\n                \"fleet_name\": \"Frota ENACOM\",\n                \"total\": 1230\n            }\n        ],\n        \"locomotives\": [\n            {\n                \"series\": \"LC80\",\n                \"total\": 44\n            }\n        ]        \n    }\n}",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:9000/results/144464",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "9000",
+					"path": [
+						"results",
+						"144464"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "abril solve",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"init_date\": 1648771200,\n    \"end_date\": 1651276800,\n    \"code\": 255575,\n    \"railroad\": {\n        \"train_models\": [\n            {\n                \"series\": \"LC80\",\n                \"locomotives\": 3,\n                \"wagons\": 43\n            },\n            {\n                \"series\": \"LC80\",\n                \"locomotives\": 4,\n                \"wagons\": 56\n            }\n        ],\n        \"wagons\": [\n            {\n                \"fleet\": \"15800\",\n                \"fleet_name\": \"Frota ENACOM\",\n                \"total\": 1230\n            }\n        ],\n        \"locomotives\": [\n            {\n                \"series\": \"LC80\",\n                \"total\": 44\n            }\n        ]        \n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -63,6 +95,38 @@
 					"port": "9000",
 					"path": [
 						"solve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "abril results",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:9000/results/255575",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "9000",
+					"path": [
+						"results",
+						"255575"
 					]
 				}
 			},
