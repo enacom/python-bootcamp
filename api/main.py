@@ -64,7 +64,10 @@ def post_results_code(code: int) -> Union[OptimizationOutput, NotFoundError]:
         message=(
             f"Resultado do problema {code} ainda não está sendo salvo."
             "Isso é parte do desafio!"
-        )
+        ),
+        # TODO: Resultados (models e allocation) do problema de otimização
+        # precisam ser preenchido nesse parâmetro
+        results=None
     )
 
     return response
